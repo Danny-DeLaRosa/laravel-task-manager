@@ -23,5 +23,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 // New route definition using 'apiResource' to handle 'tasks'
 Route::apiResource('tasks', TaskController::class)->only([
-    'index', 'show',
+    'index', // List all tasks
+    'show', // Show a specific task
+    'store', // Add a new task
 ]);

@@ -8,6 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Task extends Model
 {
     use HasFactory;
+
+    // Specify which attributes can be mass-assigned safely
+    protected $fillable = [
+        'title', // Allow 'title' to be filled through mass assignment
+    ]; 
         // Define how certain attributes should be cast when fetched from or stored in the database
     protected $casts = [
         // Cast the 'is_done' attribute as a boolean value (true/false)
