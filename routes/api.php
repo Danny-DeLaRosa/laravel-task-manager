@@ -18,5 +18,10 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-
-Route::get('tasks', [TaskController::class, 'index']);
+// Define a route for getting all tasks
+// This route responds to GET requests to '/tasks' and uses the 'index' method of the TaskController
+// Route::get('tasks', [TaskController::class, 'index']);
+// replace the get method with apiResource
+Route::apiResource('tasks', TaskController::class)->only([
+    'index', 'show',
+]);
