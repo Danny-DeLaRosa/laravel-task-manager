@@ -12,6 +12,7 @@ class Task extends Model
     // Specify which attributes can be mass-assigned safely
     protected $fillable = [
         'title', // Allow 'title' to be filled through mass assignment
+        'is_done', // Allow 'is_done' to be filled through mass assignment
     ]; 
         // Define how certain attributes should be cast when fetched from or stored in the database
     protected $casts = [

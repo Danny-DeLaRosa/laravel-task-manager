@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreTaskRequest;
+use App\Http\Requests\UpdateTaskRequest;
 use App\Http\Resources\TaskCollection;
 use App\Http\Resources\TaskResource;
 use App\Models\Task;
@@ -35,6 +36,15 @@ class TaskController extends Controller
             $validated
         );
         // Return the newly created task, wrapped in a resource for consistent formatting
+        return new TaskResource($task);
+    }
+    // Method to update an existing task
+    public function update(UpdateTaskRequest $request, Task $task)
+    {
+        // Validate the request and update the task
+        $validated = $request->validated();
+        $task->update($validated);
+        // Return the updated task as a resource
         return new TaskResource($task);
     }
 }
