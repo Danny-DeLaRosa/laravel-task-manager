@@ -13,7 +13,10 @@ return new class extends Migration
     {
         Schema::create('tasks', function (Blueprint $table) {
             $table->id();
+            // Add a 'title' column of type string to store the task's title
             $table->string('title');
+            // Add a 'is_done' column of type boolean, defaulting to 'false'
+            // This is used to mark whether a task is completed or not
             $table->boolean('is_done')->default(false);
             $table->timestamps();
         });
