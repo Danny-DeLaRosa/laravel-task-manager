@@ -47,4 +47,11 @@ class TaskController extends Controller
         // Return the updated task as a resource
         return new TaskResource($task);
     }
+
+    public function destroy(Request $request, Task $task)
+    {
+        $task->delete();
+
+        return response()->noContent(); 
+    }
 }
