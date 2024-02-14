@@ -25,7 +25,9 @@ class StoreTaskRequest extends FormRequest
         // Specify validation rules for the 'title' field of the task
         return [
             // The 'title' field is required and must not exceed 255 characters in length
-            'title' => 'required|max:255'
+            'title' => 'required|max:255',
+            'description' =>'sometimes|max:255',
+            'deadline' =>'sometimes|date',
         ];
     }
 }

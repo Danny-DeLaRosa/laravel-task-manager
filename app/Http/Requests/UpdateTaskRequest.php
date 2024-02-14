@@ -25,6 +25,7 @@ class UpdateTaskRequest extends FormRequest
         return [
             // The 'title' field is not always required but must be valid when provided
             'title' => 'sometimes|required|max:255',
+            'description' => 'sometimes|max:255',
             // The 'is_done' field is also not always required but must be a boolean when provided
             'is_done' => 'sometimes|boolean',
         ];
