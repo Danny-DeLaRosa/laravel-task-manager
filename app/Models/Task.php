@@ -24,7 +24,7 @@ class Task extends Model
     ];
     // Specify attributes that should not be visible when the model is converted to an array or JSON
     // protected $hidden = [
-    //     // Hide the 'updated_at' attribute to not show when this task was last updated
+    // Hide the 'updated_at' attribute to not show when this task was last updated
     //     'updatated_at',
     // ];
 }
